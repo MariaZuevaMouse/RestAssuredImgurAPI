@@ -1,0 +1,2714 @@
+{
+	"info": {
+		"_postman_id": "f4b80aa6-02e0-4fcf-8ee1-625d1cf75508",
+		"name": "Imgur_home_mz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account_info",
+			"item": [
+				{
+					"name": "Account Base",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/account/{{username}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{username}}"
+							]
+						},
+						"description": "Request standard user information. If you need the username for the account that is logged in, it is returned in the request for an [access token](/account/current_account). Note: This endpoint also supports the ability to lookup account base info by account ID. To do so, pass the query parameter `account_id`.\n\n#### Response Model: [Account](https://api.imgur.com/models/account)"
+					},
+					"response": [
+						{
+							"name": "Sample Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Client-ID {{clientId}}"
+									}
+								],
+								"url": {
+									"raw": "https://api.imgur.com/3/account/{{username}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"imgur",
+										"com"
+									],
+									"path": [
+										"3",
+										"account",
+										"{{username}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes",
+									"name": "Accept-Ranges",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-RateLimit-ClientLimit, X-RateLimit-ClientRemaining, X-RateLimit-UserLimit, X-RateLimit-UserRemaining, X-RateLimit-UserReset",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Age",
+									"value": "0",
+									"name": "Age",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 May 2017 14:56:02 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42f114046cd3f43be6995f2566c8ebb31f9dd21a\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "cat factory 1.0",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Backstage",
+									"value": "110",
+									"name": "X-Backstage",
+									"description": ""
+								},
+								{
+									"key": "X-Cache",
+									"value": "MISS",
+									"name": "X-Cache",
+									"description": ""
+								},
+								{
+									"key": "X-Cache-Hits",
+									"value": "0",
+									"name": "X-Cache-Hits",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-RateLimit-ClientLimit",
+									"value": "12500",
+									"name": "X-RateLimit-ClientLimit",
+									"description": ""
+								},
+								{
+									"key": "X-RateLimit-ClientRemaining",
+									"value": "12500",
+									"name": "X-RateLimit-ClientRemaining",
+									"description": ""
+								},
+								{
+									"key": "X-RateLimit-UserLimit",
+									"value": "500",
+									"name": "X-RateLimit-UserLimit",
+									"description": ""
+								},
+								{
+									"key": "X-RateLimit-UserRemaining",
+									"value": "499",
+									"name": "X-RateLimit-UserRemaining",
+									"description": ""
+								},
+								{
+									"key": "X-RateLimit-UserReset",
+									"value": "1496246162",
+									"name": "X-RateLimit-UserReset",
+									"description": ""
+								},
+								{
+									"key": "X-Redux",
+									"value": "1",
+									"name": "X-Redux",
+									"description": ""
+								},
+								{
+									"key": "X-Served-By",
+									"value": "cache-iad2621-IAD",
+									"name": "X-Served-By",
+									"description": ""
+								},
+								{
+									"key": "X-Timer",
+									"value": "S1496242562.109182,VS0,VE30",
+									"name": "X-Timer",
+									"description": ""
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Authorization, Content-Type, Accept, X-Mashape-Authorization, IMGURPLATFORM, IMGURUIDJAFO, sessionCount, IMGURMWBETA, IMGURMWBETAOPTIN",
+									"name": "access-control-allow-headers",
+									"description": ""
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, PUT, POST, DELETE, OPTIONS",
+									"name": "access-control-allow-methods",
+									"description": ""
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*",
+									"name": "access-control-allow-origin",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "a8af9726c6c741c5694e2164c15d1bdc",
+									"key": "IMGURSESSION"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "1",
+									"key": "_nc"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "110",
+									"key": "backstage"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "api.imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "898d560972119ade98fdae2cc4313b0b%7EqnBR5g7CRpOGxrTXiaBYk1zqRz2O9165",
+									"key": "authautologin"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "api.imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "upload.i-086fcbff9142dde07.production",
+									"key": "UPSERVERID"
+								}
+							],
+							"body": "{\"data\":{\"id\":48437714,\"url\":\"ghostinspector\",\"bio\":null,\"avatar\":null,\"reputation\":0,\"reputation_name\":\"Neutral\",\"created\":1481839668,\"pro_expiration\":false,\"user_follow\":{\"status\":false}},\"success\":true,\"status\":200}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Album Count (Un-Authed / Authed) Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"var countAlbumsBeaforeTest = res.data;\r",
+									"\r",
+									"pm.environment.set(\"albumCount\", countAlbumsBeaforeTest);\r",
+									"\r",
+									"tests['success request'] = res.success === true;\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/account/{{username}}/albums/count",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{username}}",
+								"albums",
+								"count"
+							]
+						},
+						"description": "Return the total number of albums associated with the account.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Creation (Un-Authed / Authed) En_name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"//postman.setNextRequest('end');",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"var albumHashEn = res.data.id;",
+									"var albumDeleteHashEn = res.data.deletehash;",
+									"",
+									"//tests['Returns 7 char alphanumeric album id'] = /^[a-z0-9]{5}$/i.test(albumHashToDelete);",
+									"//tests['Returns 15 char alhpanumeric album deletehash'] = /^[a-z0-9]{15}$/i.test(albumDeleteHash);",
+									"",
+									"postman.setEnvironmentVariable('albumHashEn', albumHashEn);",
+									"postman.setEnvironmentVariable('albumDeleteHashEn', albumDeleteHashEn);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									"",
+									"//postman.setNextRequest('Share with Community (Album)'); // Gallery -> Share with Community (Album)",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"description": "Use this header if performing this action anonymously.",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"description": "Use this header if performing this action as a logged-in user."
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids[]",
+									"value": "{{imageHash}}",
+									"description": "The image ids that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ids[]",
+									"value": "{{imageHash2}}",
+									"description": "any additional image ids...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes[]",
+									"value": "{{deleteHash}}",
+									"description": "The deletehashes of the images that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes[]",
+									"value": "{{deleteHash2}}",
+									"description": "any additional deletehashes...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "test_album_api1",
+									"description": "The title of the album",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This albums contains a lot of dank memes. Be prepared.",
+									"description": "The description of the album",
+									"type": "text"
+								},
+								{
+									"key": "privacy",
+									"value": "public",
+									"description": "Sets the privacy level of the album. Values are : public | hidden | secret. Defaults to user's privacy settings for logged in users.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover",
+									"value": "{{imageHash}}",
+									"description": "The ID of an image that you want to be the cover of the album",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/album",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album"
+							]
+						},
+						"description": "Create a new album. Optional parameter of `ids[]` is an array of image ids to add to the album. If uploading anonymous images to an anonymous album please use the optional parameter of `deletehashes[]` rather than `ids[]`. Note: including the optional `deletehashes[]` parameter will also work for authenticated user albums. There is no need to duplicate image ids with their corresponding deletehash.\n\nThis method is available without authenticating an account, and may be used merely by sending \"Authorization: Client-ID {client_id}\" in the request headers. Doing so will create an anonymous album which is not tied to an account.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)\n\n#### Parameters\n\n| Key            | Required | Description                                                                                                                          |\n|----------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|\n| ids[]          | optional | The image ids that you want to be included in the album.                                                                             |\n| deletehashes[] | optional | The deletehashes of the images that you want to be included in the album.                                                            |\n| title          | optional | The title of the album                                                                                                               |\n| description    | optional | The description of the album                                                                                                         |\n| privacy        | optional | Sets the privacy level of the album. Values are : `public` &#124; `hidden` &#124; secret. Defaults to user's privacy settings for logged in users. |\n| layout         | optional | (_deprecated_) Sets the layout to display the album. Values are : `blog` &#124; `grid` &#124; `horizontal` &#124; `vertical`                                               |\n| cover          | optional | The ID of an image that you want to be the cover of the album                                                                        |"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Album name/description(Un-Authed / Authed) ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"\r",
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"tests['Status code is 200'] = (responseCode.code === 200);\r",
+									"tests['Album deletion was successful'] = res.success === true && res.data === true;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"description": "Use this header if performing this action anonymously.",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"description": "Use this header if performing this action as a logged-in user."
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids[]",
+									"value": "{{imageHash}}",
+									"description": "Optional. The image ids that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ids[]",
+									"value": "{{image2Hash}}",
+									"description": "any additional image ids...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes",
+									"value": "{{deleteHash}}",
+									"description": "Optional. The deletehashes of the images that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "UpdatetedAlbumName",
+									"description": "Optional. The title of the album",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This description was updated",
+									"description": "Optional. The description of the album",
+									"type": "text"
+								},
+								{
+									"key": "privacy",
+									"value": "public",
+									"description": "Optional. Sets the privacy level of the album. Values are : `public` | `hidden` | `secret`. Defaults to user's privacy settings for logged in users.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover",
+									"value": "{{imageHash}}",
+									"description": "Optional. The ID of an image that you want to be the cover of the album",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/album/{{albumHashEn}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album",
+								"{{albumHashEn}}"
+							]
+						},
+						"description": "Update the information of an album. For anonymous albums, `albumHash` should be the deletehash that is returned at creation.\n\nIf uploading anonymous images to an anonymous album please use the optional parameter of `deletehashes[]` rather than `ids[]`. Note: including the optional `deletehashes[]` parameter will also work for authenticated user albums. There is no need to duplicate image ids with their corresponding deletehash.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)\n\n#### Parameters\n\n| Key            | Required | Description                                                                                                                          |\n|----------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|\n| ids[]          | optional | The image ids that you want to be included in the album.                                                                             |\n| deletehashes[] | optional | The deletehashes of the images that you want to be included in the album.                                                            |\n| title          | optional | The title of the album                                                                                                               |\n| description    | optional | The description of the album                                                                                                         |\n| privacy        | optional | Sets the privacy level of the album. Values are : `public` &#124; `hidden` &#124; secret. Defaults to user's privacy settings for logged in users. |\n| layout         | optional | (_deprecated_) Sets the layout to display the album. Values are : `blog` &#124; `grid` &#124; `horizontal` &#124; `vertical`                                               |\n| cover          | optional | The ID of an image that you want to be the cover of the album                                                                        |"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Creation (Un-Authed / Authed) Ru_name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"var albumHashRu = res.data.id;",
+									"var albumDeleteHashRu = res.data.deletehash;",
+									"",
+									"//tests['Returns 7 char alphanumeric album id'] = /^[a-z0-9]{5}$/i.test(albumHash);",
+									"// tests['Returns 15 char alhpanumeric album deletehash'] = /^[a-z0-9]{15}$/i.test(albumDeleteHash);",
+									"",
+									"postman.setEnvironmentVariable('albumHashRu', albumHashRu);",
+									"postman.setEnvironmentVariable('albumDeleteHashRu', albumDeleteHashRu);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"description": "Use this header if performing this action anonymously.",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"description": "Use this header if performing this action as a logged-in user."
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids[]",
+									"value": "{{imageHash}}",
+									"description": "The image ids that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ids[]",
+									"value": "{{imageHash2}}",
+									"description": "any additional image ids...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes[]",
+									"value": "{{deleteHash}}",
+									"description": "The deletehashes of the images that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes[]",
+									"value": "{{deleteHash2}}",
+									"description": "any additional deletehashes...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Мой любимый альбом",
+									"description": "The title of the album",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This albums contains a lot of dank memes. Be prepared.",
+									"description": "The description of the album",
+									"type": "text"
+								},
+								{
+									"key": "privacy",
+									"value": "public",
+									"description": "Sets the privacy level of the album. Values are : public | hidden | secret. Defaults to user's privacy settings for logged in users.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover",
+									"value": "{{imageHash}}",
+									"description": "The ID of an image that you want to be the cover of the album",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/album",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album"
+							]
+						},
+						"description": "Create a new album. Optional parameter of `ids[]` is an array of image ids to add to the album. If uploading anonymous images to an anonymous album please use the optional parameter of `deletehashes[]` rather than `ids[]`. Note: including the optional `deletehashes[]` parameter will also work for authenticated user albums. There is no need to duplicate image ids with their corresponding deletehash.\n\nThis method is available without authenticating an account, and may be used merely by sending \"Authorization: Client-ID {client_id}\" in the request headers. Doing so will create an anonymous album which is not tied to an account.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)\n\n#### Parameters\n\n| Key            | Required | Description                                                                                                                          |\n|----------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|\n| ids[]          | optional | The image ids that you want to be included in the album.                                                                             |\n| deletehashes[] | optional | The deletehashes of the images that you want to be included in the album.                                                            |\n| title          | optional | The title of the album                                                                                                               |\n| description    | optional | The description of the album                                                                                                         |\n| privacy        | optional | Sets the privacy level of the album. Values are : `public` &#124; `hidden` &#124; secret. Defaults to user's privacy settings for logged in users. |\n| layout         | optional | (_deprecated_) Sets the layout to display the album. Values are : `blog` &#124; `grid` &#124; `horizontal` &#124; `vertical`                                               |\n| cover          | optional | The ID of an image that you want to be the cover of the album                                                                        |"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Creation (Un-Authed / Authed) special_symbols",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"var albumHashSymbol = res.data.id;",
+									"var albumDeleteHashSymbol = res.data.deletehash;",
+									"",
+									"postman.setEnvironmentVariable('albumHashSymbol', albumHashSymbol);",
+									"postman.setEnvironmentVariable('albumDeleteHashSymbol', albumDeleteHashSymbol);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"description": "Use this header if performing this action anonymously.",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"description": "Use this header if performing this action as a logged-in user."
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids[]",
+									"value": "{{imageHash}}",
+									"description": "The image ids that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ids[]",
+									"value": "{{imageHash2}}",
+									"description": "any additional image ids...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes[]",
+									"value": "{{deleteHash}}",
+									"description": "The deletehashes of the images that you want to be included in the album.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deletehashes[]",
+									"value": "{{deleteHash2}}",
+									"description": "any additional deletehashes...",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "spec_sympol_album%@#",
+									"description": "The title of the album",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This albums contains a lot of dank memes. Be prepared.",
+									"description": "The description of the album",
+									"type": "text"
+								},
+								{
+									"key": "privacy",
+									"value": "public",
+									"description": "Sets the privacy level of the album. Values are : public | hidden | secret. Defaults to user's privacy settings for logged in users.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cover",
+									"value": "{{imageHash}}",
+									"description": "The ID of an image that you want to be the cover of the album",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/album",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album"
+							]
+						},
+						"description": "Create a new album. Optional parameter of `ids[]` is an array of image ids to add to the album. If uploading anonymous images to an anonymous album please use the optional parameter of `deletehashes[]` rather than `ids[]`. Note: including the optional `deletehashes[]` parameter will also work for authenticated user albums. There is no need to duplicate image ids with their corresponding deletehash.\n\nThis method is available without authenticating an account, and may be used merely by sending \"Authorization: Client-ID {client_id}\" in the request headers. Doing so will create an anonymous album which is not tied to an account.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)\n\n#### Parameters\n\n| Key            | Required | Description                                                                                                                          |\n|----------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|\n| ids[]          | optional | The image ids that you want to be included in the album.                                                                             |\n| deletehashes[] | optional | The deletehashes of the images that you want to be included in the album.                                                            |\n| title          | optional | The title of the album                                                                                                               |\n| description    | optional | The description of the album                                                                                                         |\n| privacy        | optional | Sets the privacy level of the album. Values are : `public` &#124; `hidden` &#124; secret. Defaults to user's privacy settings for logged in users. |\n| layout         | optional | (_deprecated_) Sets the layout to display the album. Values are : `blog` &#124; `grid` &#124; `horizontal` &#124; `vertical`                                               |\n| cover          | optional | The ID of an image that you want to be the cover of the album                                                                        |"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Count (Un-Authed / Authed) Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"var countAlbumsAfterTest = res.data;\r",
+									"\r",
+									"pm.environment.set(\"albumCountUpdate\", countAlbumsAfterTest);\r",
+									"\r",
+									"var countOld = pm.variables.get(\"albumCount\");\r",
+									"var countNew = pm.variables.get(\"albumCountUpdate\");\r",
+									"\r",
+									"tests['success request'] = res.success === true;\r",
+									"tests['albums count'] =  countOld === countNew-3;\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/account/{{username}}/albums/count",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{username}}",
+								"albums",
+								"count"
+							]
+						},
+						"description": "Return the total number of albums associated with the account.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Albums (Un-Authed / Authed)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"tests['Album info receiving was successful'] = res.success === true && res.status === 200;\r",
+									"\r",
+									"tests['Status code is 200'] = (responseCode.code === 200);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/account/{{username}}/albums/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{username}}",
+								"albums",
+								""
+							]
+						},
+						"description": "Get all the albums associated with the account. Must be logged in as the user to see secret and hidden albums.\n\n#### Response Model: [Album](https://api.imgur.com/models/album)\n\n#### Parameters\n| Key  | Required | Description                                                                                     |\n|------|----------|-------------------------------------------------------------------------------------------------|\n| page | optional | integer - allows you to set the page number so you don't have to retrieve all the data at once. |"
+					},
+					"response": []
+				},
+				{
+					"name": "Album IDs (Un-Authed / Authed)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"tests['Album IDs receiving was successful'] = res.success === true && res.status === 200;\r",
+									"\r",
+									"tests['Status code is 200'] = (responseCode.code === 200);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/account/{{username}}/albums/ids/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"account",
+								"{{username}}",
+								"albums",
+								"ids",
+								""
+							]
+						},
+						"description": "Return an array of all of the album IDs (hashes).\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Deletion (Un-Authed) En_album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"tests['data is true'] = res.data === true;\r",
+									"tests['status is true'] = res.success === true;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/album/{{albumDeleteHashEn}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album",
+								"{{albumDeleteHashEn}}"
+							]
+						},
+						"description": "Delete an album with a given deletehash.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Deletion (Authed)  Ru_album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"//postman.setNextRequest('end');",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									"tests['Album deletion was successful'] = res.success === true && res.data === true;",
+									"",
+									"//postman.setNextRequest('Image Deletion (Authed)'); // Image -> Image Deletion (Authed)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/album/{{albumHashRu}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album",
+								"{{albumHashRu}}"
+							]
+						},
+						"description": "Delete an album with a given ID. You are required to be logged in as the user to delete the album.\n\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Deletion (Authed)  Symbol_album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"//postman.setNextRequest('end');",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									"tests['Album deletion was successful'] = res.success === true && res.data === true;",
+									"",
+									"//postman.setNextRequest('Image Deletion (Authed)'); // Image -> Image Deletion (Authed)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/album/{{albumHashSymbol}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album",
+								"{{albumHashSymbol}}"
+							]
+						},
+						"description": "Delete an album with a given ID. You are required to be logged in as the user to delete the album.\n\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "oauth2",
+				"oauth2": [
+					{
+						"key": "scope",
+						"value": "",
+						"type": "string"
+					},
+					{
+						"key": "clientSecret",
+						"value": "a543220c4991282d7764eaed80d207a80b78f0d5",
+						"type": "string"
+					},
+					{
+						"key": "clientId",
+						"value": "3412b1895eff6a8",
+						"type": "string"
+					},
+					{
+						"key": "accessTokenUrl",
+						"value": "https://api.imgur.com/oauth2/token",
+						"type": "string"
+					},
+					{
+						"key": "authUrl",
+						"value": "https://api.imgur.com/oauth2/authorize",
+						"type": "string"
+					},
+					{
+						"key": "redirect_uri",
+						"value": "https://www.getpostman.com/oauth2/callback",
+						"type": "string"
+					},
+					{
+						"key": "grant_type",
+						"value": "authorization_code",
+						"type": "string"
+					},
+					{
+						"key": "tokenName",
+						"value": "imgur_token_mz",
+						"type": "string"
+					},
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "client_authentication",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "useBrowser",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Image Upload 1_sample",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"//postman.setNextRequest('end');",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"var imageHash1 = res.data.id;",
+									"var imageDeleteHash = res.data.deletehash;",
+									"tests['Returns 7 char alphanumeric id'] = /^[a-z0-9]{7}$/i.test(imageHash1);",
+									"tests['Returns 15 char alhpanumeric deletehash'] = /^[a-z0-9]{15}$/i.test(imageDeleteHash);",
+									"",
+									"postman.setEnvironmentVariable('imageHash1', imageHash1);",
+									"postman.setEnvironmentVariable('imageDeleteHash', imageDeleteHash);",
+									"",
+									"//postman.setNextRequest('Account Images'); // Account -> Account Images",
+									"",
+									"//postman.setEnvironmentVariable('imageToDelete', id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+									"description": "*required* A binary file, base64 data, or a URL for an image. (up to 10MB)",
+									"type": "text"
+								},
+								{
+									"key": "album",
+									"value": "{{albumHash}}",
+									"description": "[optional] The album",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "1x1 Pixel",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "This is an 1x1 pixel image.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "pixel.gif",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "gif",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image"
+							]
+						},
+						"description": "Upload a new image.\n\n#### Parameters\n\n| Key         | Required | Description                                                                                                                            |\n|-------------|----------|----------------------------------------------------------------------------------------------------------------------------------------|\n| image       | required | A binary file, base64 data, or a URL for an image. (up to 10MB)                                                                        |\n| album       | optional | The id of the album you want to add the image to. For anonymous albums, `album` should be the deletehash that is returned at creation. |\n| type        | optional | The type of the file that's being sent; `file`, `base64` or `URL`                                                                            |\n| name        | optional | The name of the file, this is automatically detected if uploading a file with a POST and multipart / form-data                         |\n| title       | optional | The title of the image.                                                                                                                |\n| description | optional | The description of the image.                                                                                                          |"
+					},
+					"response": [
+						{
+							"name": "Sample Anonymous Upload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Client-ID {{clientId}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"value": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+											"type": "text"
+										},
+										{
+											"key": "album",
+											"value": "{{albumHash}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "1x1 Pixel",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "This is an 1x1 pixel image.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "pixel.gif",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "gif",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.imgur.com/3/image",
+									"protocol": "https",
+									"host": [
+										"api",
+										"imgur",
+										"com"
+									],
+									"path": [
+										"3",
+										"image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, Accept, X-Mashape-Authorization, IMGURPLATFORM, IMGURUIDJAFO, SESSIONCOUNT, IMGURMWBETA, IMGURMWBETAOPTIN",
+									"name": "Access-Control-Allow-Headers",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, PUT, POST, DELETE, OPTIONS",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-RateLimit-ClientLimit, X-RateLimit-ClientRemaining, X-RateLimit-UserLimit, X-RateLimit-UserRemaining, X-RateLimit-UserReset",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 May 2017 16:28:10 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8e9f040e2b6ba2ebf5c836309b5cb50cf4b7368\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Limit",
+									"value": "1250",
+									"name": "X-Post-Rate-Limit-Limit",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Remaining",
+									"value": "1250",
+									"name": "X-Post-Rate-Limit-Remaining",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Reset",
+									"value": "-2",
+									"name": "X-Post-Rate-Limit-Reset",
+									"description": ""
+								},
+								{
+									"key": "X-origin-ip",
+									"value": "172.16.2.228",
+									"name": "X-origin-ip",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "259f1853850b21cb4df8bc5bd15b7884",
+									"key": "IMGURSESSION"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "1",
+									"key": "_nc"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "api.imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "upload.i-054973f4f04ffec62.production",
+									"key": "UPSERVERID"
+								}
+							],
+							"body": "{\n  \"data\": {\n    \"id\": \"orunSTu\",\n    \"title\": null,\n    \"description\": null,\n    \"datetime\": 1495556889,\n    \"type\": \"image/gif\",\n    \"animated\": false,\n    \"width\": 1,\n    \"height\": 1,\n    \"size\": 42,\n    \"views\": 0,\n    \"bandwidth\": 0,\n    \"vote\": null,\n    \"favorite\": false,\n    \"nsfw\": null,\n    \"section\": null,\n    \"account_url\": null,\n    \"account_id\": 0,\n    \"is_ad\": false,\n    \"in_most_viral\": false,\n    \"tags\": [],\n    \"ad_type\": 0,\n    \"ad_url\": \"\",\n    \"in_gallery\": false,\n    \"deletehash\": \"x70po4w7BVvSUzZ\",\n    \"name\": \"\",\n    \"link\": \"http://i.imgur.com/orunSTu.gif\"\n  },\n  \"success\": true,\n  \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Image info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"tests['Status code is 200'] = (responseCode.code === 200);\r",
+									"tests['Image info received'] = res.success === true && res.status === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/image/{{imageHash1}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image",
+								"{{imageHash1}}"
+							]
+						},
+						"description": "Get information about an image."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Image Information (Authed) sample",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"tests['Status code is 200'] = (responseCode.code === 200);\r",
+									"tests['Album deletion was successful'] = res.success === true && res.data === true;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Heart",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is an image of a heart outline.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image/{{imageHash1}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image",
+								"{{imageHash1}}"
+							]
+						},
+						"description": "Updates the title or description of an image.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)\n\n#### Parameters\n\n| Key         | Required | Description                   |\n|-------------|----------|-------------------------------|\n| title       | optional | The title of the image.       |\n| description | optional | The description of the image. |"
+					},
+					"response": []
+				},
+				{
+					"name": "Image Deletion (Un-Authed) (upload1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);",
+									"",
+									"tests[\"Successful delete\"] = res.success === true && res.success ===true;",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids",
+									"value": "{{imageHash1}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image/{{imageDeleteHash}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image",
+								"{{imageDeleteHash}}"
+							]
+						},
+						"description": "Deletes an image.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Image Upload 2_url",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"//postman.setNextRequest('end');",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"var imageHashUrl = res.data.id;",
+									"var imageDeleteHashUrl = res.data.deletehash;",
+									"tests['Returns 7 char alphanumeric id'] = /^[a-z0-9]{7}$/i.test(imageHashUrl);",
+									"tests['Returns 15 char alhpanumeric deletehash'] = /^[a-z0-9]{15}$/i.test(imageDeleteHashUrl);",
+									"",
+									"postman.setEnvironmentVariable('imageHashUrl', imageHashUrl);",
+									"postman.setEnvironmentVariable('imageDeleteHashUrl', imageDeleteHashUrl);",
+									"",
+									"//postman.setNextRequest('Account Images'); // Account -> Account Images"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "https://mir-s3-cdn-cf.behance.net/project_modules/disp/0c120d26942581.5604f7b2c2fd9.jpg",
+									"description": "*required* A binary file, base64 data, or a URL for an image. (up to 10MB)",
+									"type": "text"
+								},
+								{
+									"key": "album",
+									"value": "{{albumHash}}",
+									"description": "[optional] The album",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "1x1 Pixel",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "This is an 1x1 pixel image.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "pixel.gif",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "gif",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image"
+							]
+						},
+						"description": "Upload a new image.\n\n#### Parameters\n\n| Key         | Required | Description                                                                                                                            |\n|-------------|----------|----------------------------------------------------------------------------------------------------------------------------------------|\n| image       | required | A binary file, base64 data, or a URL for an image. (up to 10MB)                                                                        |\n| album       | optional | The id of the album you want to add the image to. For anonymous albums, `album` should be the deletehash that is returned at creation. |\n| type        | optional | The type of the file that's being sent; `file`, `base64` or `URL`                                                                            |\n| name        | optional | The name of the file, this is automatically detected if uploading a file with a POST and multipart / form-data                         |\n| title       | optional | The title of the image.                                                                                                                |\n| description | optional | The description of the image.                                                                                                          |"
+					},
+					"response": [
+						{
+							"name": "Sample Anonymous Upload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Client-ID {{clientId}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"value": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+											"type": "text"
+										},
+										{
+											"key": "album",
+											"value": "{{albumHash}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "1x1 Pixel",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "This is an 1x1 pixel image.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "pixel.gif",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "gif",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.imgur.com/3/image",
+									"protocol": "https",
+									"host": [
+										"api",
+										"imgur",
+										"com"
+									],
+									"path": [
+										"3",
+										"image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, Accept, X-Mashape-Authorization, IMGURPLATFORM, IMGURUIDJAFO, SESSIONCOUNT, IMGURMWBETA, IMGURMWBETAOPTIN",
+									"name": "Access-Control-Allow-Headers",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, PUT, POST, DELETE, OPTIONS",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-RateLimit-ClientLimit, X-RateLimit-ClientRemaining, X-RateLimit-UserLimit, X-RateLimit-UserRemaining, X-RateLimit-UserReset",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 May 2017 16:28:10 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8e9f040e2b6ba2ebf5c836309b5cb50cf4b7368\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Limit",
+									"value": "1250",
+									"name": "X-Post-Rate-Limit-Limit",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Remaining",
+									"value": "1250",
+									"name": "X-Post-Rate-Limit-Remaining",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Reset",
+									"value": "-2",
+									"name": "X-Post-Rate-Limit-Reset",
+									"description": ""
+								},
+								{
+									"key": "X-origin-ip",
+									"value": "172.16.2.228",
+									"name": "X-origin-ip",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "259f1853850b21cb4df8bc5bd15b7884",
+									"key": "IMGURSESSION"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "1",
+									"key": "_nc"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "api.imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "upload.i-054973f4f04ffec62.production",
+									"key": "UPSERVERID"
+								}
+							],
+							"body": "{\n  \"data\": {\n    \"id\": \"orunSTu\",\n    \"title\": null,\n    \"description\": null,\n    \"datetime\": 1495556889,\n    \"type\": \"image/gif\",\n    \"animated\": false,\n    \"width\": 1,\n    \"height\": 1,\n    \"size\": 42,\n    \"views\": 0,\n    \"bandwidth\": 0,\n    \"vote\": null,\n    \"favorite\": false,\n    \"nsfw\": null,\n    \"section\": null,\n    \"account_url\": null,\n    \"account_id\": 0,\n    \"is_ad\": false,\n    \"in_most_viral\": false,\n    \"tags\": [],\n    \"ad_type\": 0,\n    \"ad_url\": \"\",\n    \"in_gallery\": false,\n    \"deletehash\": \"x70po4w7BVvSUzZ\",\n    \"name\": \"\",\n    \"link\": \"http://i.imgur.com/orunSTu.gif\"\n  },\n  \"success\": true,\n  \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Image Deletion (Authed) (upload2)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									"tests['Image deletion was successful'] = res.success === true && res.data === true;",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids",
+									"value": "{{imageHashUrl}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image/{{imageHashUrl}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image",
+								"{{imageHashUrl}}"
+							]
+						},
+						"description": "Deletes an image.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Image Upload 3_base_64_my_screen",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"var imageHashBase64 = res.data.id;",
+									"var imageDeleteHashBase64 = res.data.deletehash;",
+									"tests['Returns 7 char alphanumeric id'] = /^[a-z0-9]{7}$/i.test(imageHashBase64);",
+									"tests['Returns 15 char alhpanumeric deletehash'] = /^[a-z0-9]{15}$/i.test(imageDeleteHashBase64);",
+									"",
+									"postman.setEnvironmentVariable('imageHashBase64', imageHashBase64);",
+									"postman.setEnvironmentVariable('imageDeleteHashBase64', imageDeleteHashBase64);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "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or6Y/EQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMaaBZfFCFi4/wBGUfK7L/E3oa3/ALHH/el/7/P/AI1iN/yNC/8AXuv/AKE1dFQBD9jj/vS/9/n/AMaPscf96X/v8/8AjU9FAEH2OP8AvS/9/n/xo+xx/wB6X/v8/wDjU9FAEH2OP+9L/wB/n/xo+xx/3pf+/wA/+NT0UAQfY4/70v8A3+f/ABo+xx/3pf8Av8/+NT0UAQfY4/70v/f5/wDGj7HH/el/7/P/AI1PRQBB9jj/AL0v/f5/8aPscf8Ael/7/P8A41PRQBB9jj/vS/8Af5/8aPscf96X/v8AP/jU9FAEH2OP+9L/AN/n/wAaPscf96X/AL/P/jU9FAEH2OP+9L/3+f8Axo+xx/3pf+/z/wCNT0UAQfY4/wC9L/3+f/Gj7HH/AHpf+/z/AONT0UAFFFFABRRRQAUUUUAFc/4k/wCPix/6+I//AEIV0Fc/4k/4+LH/AK+I/wD0IUAaVFFFABRRXA2/x48C3ni4eGbfXln1c3JsxHFaztF5w6x+cE8vcPTdnigDvqKKKACiisvxR4m03wb4fv8AW9Yufsel2MRmuJ/LaTYg6naoLH8AaANSiuM8F/GPwh8QNVn0vRdVaXU4IhO9ld2c9pP5ZON4SZEZl5HIBHIrs6ACiiigAooooAKKryajaRX0Nk9zCl7MjSx27SASOikBmVc5IBZckdNw9asUAFFV7vUbXT2t1urmG2a4lEMImkCmSQgkIuTyxAPA54NWKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMpv+RoX/r3X/0Jq6Kudb/kaF/691/9CauioAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArn/En/HxY/8AXxH/AOhCugrn/En/AB8WP/XxH/6EKANKiiigAJxyeBXzjo/iE/BjxBomneGfE+i+LvBXiDW2t4tISVG1CwkncszRSRsRNGrFiwdQVBHzV9HVz+k/DvwpoOrSarpnhjR9O1STO+9tLCKKZs9cuqhjn60AfMvi74nX954gtvFXh/UdQ061bxXBpCxX3ieQmYC4WGZF0wRmPYRvOWcMPvegrovFPifxFo+v+IvhbDrOojWte1q3m0fUGuZDPBp1xmS4KSZ3AQ+TMowfl3JjHFe8n4e+Fm1K61E+GtHOoXbK9xd/YIvNmZWDKXfbliGVWBJ4IB7VozaBplxrFvq8unWkuq28bQw3zwKZ4kb7yLJjcFPcA4NAHy7r+peOPE3jbx7Dp/iOHRr3w/fLbaadQ8Uy6fFawrGjJLLaC3dLlXyxLyNzyBtxmvXv2jvOb9nnxiZShuP7LO9k5Xd8uce2a7TXPAPhjxNqEF/rHhzSdWvrfAhur6ximljwcjazKSOfStTUtLsta0+aw1Czt76xnXZLbXMSyRSL6MrAgj2NAHzvo83iO1+LVxdeLbixuPEul+FpZfDEOk2jw217GygzZDyOzSqyRrtzjDZHXjP+Bt7411698GeJH8T2dxBqSO+qw3XimS8a83RsxSKxa3VLeRHA+WNvlCsDu619KXOhabe3ljdXGnWs91YFjaTSQKz25I2kxsRlMjg4xxWfY+APC+m69Lrdn4b0i01qUsZNSgsYkuHz1zIF3HPfmgD5YvPFF7cfDGDxfJ8RdZt/F1/4kjs7nSY9UKQxr9uCNapbZ/d7Y1ySoDEZySCRXc6z8RpNF0v9oGG+8SS2V7p8zHTUmvWSS3V7GPy/IBOVBk3Y2fxE967/AOK3wZ0/xjpFzJomk6LYeIrm9tLifU5LZY5ZUiuI5GVpUQuxITgHjOOldjqXgTw1rOrLquoeHtKvtUWMwi9ubKKSYIQQVDlS20gkYzjk0AfN+reIvFfifXvBugDVpYLSTwjbaihk8SzaLJd3LcSSGeOGRpmUBTsJA+bJzWv4vt/G7eD/AAbdX/im31p7CynfVtP0HxJ/Zk9/8wEdxFcKE8zYqkFW2KzE17zrHgTw14i0y103VfD2lanp1qALe0vLKKWKEAYARGUhcDjgVBqnw18I65bWNvqXhXRdQt7FdlpFdadDKluvpGGUhB7DFAHgOjzaH4w+Nnw61j+19ch0y88INdWkl9q88E0jrPHw5SQBiQAXUZV8AkHitHR9U1Dwv8ZLM+JNc1LXLbWdYmg0q/0fxCXs1yH2Wtxp+QE2BSN6BuVGSOa941bwboGvLYDU9D03URYMHtBd2kcv2dhjBj3A7CMDkY6VBp/w/wDC2k65LrVj4a0iy1iYsZNQt7CKO4ct94mQLuOe/PNAHlP7Sml2t/4n+FH229vbGzfxF5E0ltqE1oqhreUg7o3Xa2QAGyCMkA8kHB8RahHrXiz4hQ6v8QNW8LW/hqyt20WKz1ZrZTCYA/2p8n/Sd0ny/PuHGOpr6D17w7pXijT3sNa0yz1ewchmtb+3SeIkdCVYEZFUNT+H3hbWmsDqHhrR786eoWzN1YRSfZgOgj3KdgGB0x0oAofCLXtU8U/C/wALavrcflate6dDPcrs25dkBJx2z1x7111HTgUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBlN/yNC/9e6/+hNXRVzrf8jQv/Xuv/oTV0VAC0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFc/4k/4+LH/AK+I/wD0IV0Fc/4k/wCPix/6+I//AEIUAaVFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAZTf8jQv/Xuv/oTV0Vc63/I0L/17r/6E1dFQAtFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXP8AiT/j4sf+viP/ANCFdBXP+JP+Pix/6+I//QhQBpUUUUAFZrayAxCxbl7Etj+laVcyv3RQBp/20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFqP7aP/ADx/8f8A/rVm0UAaX9tH/nj/AOP/AP1qP7aP/PH/AMf/APrVm0UAaX9tH/nj/wCP/wD1qP7aP/PH/wAf/wDrVm0UAaX9tH/nj/4//wDWo/to/wDPH/x//wCtWbRQBpf20f8Anj/4/wD/AFq0IJhcQrIvRq52tvTP+PGP8f5mgC1RRRQBlN/yNC/9e6/+hNXRVzrf8jQv/Xuv/oTV0VAC0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFc/4k/4+LH/AK+I/wD0IV0Fc/4k/wCPix/6+I//AEIUAaVFFFABXMr90V01cyv3RQBw3x21K70j4N+Mr2wuprK8t9LnkhuLeQxyRsFOGVgcgj1FeTeLPjHrWpeHPAlpD4d8YeHpZtY0yOfVb1EhhnQsA6F0mZmD+hGD3r3L4h+Ev+E98Da74d+1/Yf7UtJLX7T5fmeXuGN23Izj0yKyfF3w0/4Srwz4b0j+0vsv9j31le+d5G/zvs5B243Dbux1ycehoA4q7+KmleBJPifq1r4acXOm6va293It62y7kkiiCzSFlIgRQyhiAQAuetN8a/FzxfbeBdE1bTdJ0i2udR1y0sI5LXWVvLeWJ3XlJRARh/mQnbleSM8V1UHwx1XSb7xlf6P4jisr3xDfxXoafThPHCqRLGY2UyDeGC5yCpGa5yH9nMQ+E9R09NejttWutYh1yO7stNSG0t7iLbt2WofG07fmG/JJJzQB0GufEzX7PXrTw5pPhSHWPEv9njUb+3GqCG1tULFVUTNFl2ZgQPkXpk4rEk/aG+12fhU6P4XvNT1HXpby0Gnm5SKS2ubfh43YgrtBDZfPAGQDnFbOrfDDxBcaxZ+IdM8XR6X4oFh/Z99eHSxNbXcYYsp8gyAoysTghz15zUGg/Au18O33gu4ttWmlbw/Ne3U7XEIaS/muVPmOzAgJ8zE4APYe9AD/APhc76P/AMJXF4m0ZdDvNB0yLVWhjvBOtxE6HIVti8rIrR9Dng98V3PhfVLrXPDemajfWP8AZl3d20c8tn5vm+SzKDs3bVyRnGcCvFPjDo+mfE74veE/D+mXTz6hZO3/AAkEduCUjsAUmEcxxgF5Ej2jrgtXv444HAoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA8W+Kvxm8T/DPxAto+gWl5p9zzZ3Ydx5nqpHZhnp34PevT/B99rGpeH7a712zh07UJhva0hJPlKeisT/F6+mcdqv6hpFlq32f7baxXX2eZbiHzVB2SL0YehGat0AFbemf8eMf4/zNYlbemf8AHjH+P8zQBaooooAym/5Ghf8Ar3X/ANCauirnW/5Ghf8Ar3X/ANCauioAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArn/En/AB8WP/XxH/6EK6Cuf8Sf8fFj/wBfEf8A6EKANKiiigArmsbeD1HBrpaja3idstEjH1Kg0Ac9RXQfZIP+eMf/AHwKPskH/PGP/vgUAc/RXQfZIP8AnjH/AN8Cj7JB/wA8Y/8AvgUAc/RXQfZIP+eMf/fAo+yQf88Y/wDvgUAc/RXQfZIP+eMf/fAo+yQf88Y/++BQBz9FdB9kg/54x/8AfAo+yQf88Y/++BQBz9FdB9kg/wCeMf8A3wKPskH/ADxj/wC+BQBz9FdB9kg/54x/98Cj7JB/zxj/AO+BQBz9FdB9kg/54x/98Cj7JB/zxj/74FAHP0V0H2SD/njH/wB8Cj7JB/zxj/74FAHP0V0H2SD/AJ4x/wDfAo+yQf8APGP/AL4FAHP0V0H2SD/njH/3wKPskH/PGP8A74FAHP0V0H2SD/njH/3wKPskH/PGP/vgUAc/RXQfZIP+eMf/AHwKPskH/PGP/vgUAc/RXQfZIP8AnjH/AN8Cj7JB/wA8Y/8AvgUAc/RXQfZIP+eMf/fAo+yQf88Y/wDvgUAc/RXQfZIP+eMf/fAo+yQf88Y/++BQBz9FdB9kg/54x/8AfAo+yQf88Y/++BQBz9FdB9kg/wCeMf8A3wKPskH/ADxj/wC+BQBz9FdB9kg/54x/98Cj7JB/zxj/AO+BQBz9FdB9kg/54x/98Cj7JB/zxj/74FAHP0V0H2SD/njH/wB8Cj7JB/zxj/74FAHP0V0H2SD/AJ4x/wDfAo+yQf8APGP/AL4FAHP0V0H2SD/njH/3wKPskH/PGP8A74FAHP0V0H2SD/njH/3wKPskH/PGP/vgUAc/RXQfZIP+eMf/AHwKPskH/PGP/vgUAc/RXQfZIP8AnjH/AN8Cj7JB/wA8Y/8AvgUAc/RXQfZIP+eMf/fAo+yQf88Y/wDvgUAc/RXQfZIP+eMf/fAo+yQf88Y/++BQBz9FdB9kg/54x/8AfAo+yQf88Y/++BQBz9FdB9kg/wCeMf8A3wKPskH/ADxj/wC+BQBz9FdB9kg/54x/98Cj7JB/zxj/AO+BQBz9FdB9kg/54x/98Cj7JB/zxj/74FAHP1uaaCLKPPuf1NSfZYP+eMf/AHyKloAKKKKAMpv+RoX/AK91/wDQmroq51v+RoX/AK91/wDQmroqAFooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5/xJ/wAfFj/18R/+hCugrn/En/HxY/8AXxH/AOhCgDSooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDKb/kaF/691/8AQmroq51v+RoX/r3X/wBCauioAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCr9rl/58p/++o//iqPtcv/AD5T/wDfUf8A8VVqigCr9rl/58p/++o//iqPtcv/AD5T/wDfUf8A8VVqigCr9rl/58p/++o//iqPtcv/AD5T/wDfUf8A8VVqigCr9rl/58p/++o//iqwfENzI11YA2kyA3MfzMUwPnHo1dRXP+JP+Pix/wCviP8A9CFAGlRRRQAVzGl+O01m6RbLRdVuLB5mgXUljjEBKkqWwZN+0EEbtmOK6evJ4db03RdbsYvB3iBdQW7v1S58PKwnSNXb97Ioxvh2/MxydvtXDiarpOLvZfK/Ta+/nbXax6uBw8cRGa5byW29lve7Wz7X03ueg+GvEH/CRW15L5H2f7PeT2m3fu3eW5Xd0GM4zjtWvXid54c07/hBfGGtm1jOr2+qXctvfEZlgZJ/l8tuqjjoOuTnrV/XP+EfbxD4oPjHyPtZSM6Ubr7/AJPlD/j2z/H5m7Oz5s49q5I42cYrnSvprey1vvppt+J6E8sp1JydKTsm1ZRu9OXb3tfi8tj12ivDby31aGXS9Ivlm+2eLtNtba6ZvvLJER55b0Pksc+4rd+Gi3GoeJza3YYnwraNpYZh96RpDhh/2yjj/wC+qunj3OoqfJZv/h//AEnX8DOrlKpUZVvappa7dNr77c/u/j5HqtFeOfFHUrHUtX1uyvodGtbixslFo2o2jXN3dl1Zv9GAdNpDcbl3HPXGKWObSLvWNHn8aSW0mnyaBbNZPqZHktMQTMRu+Xzfuf7WOlOWPSqOCS0dr307a6afqEcpbpRquT1V7KN3smra2lo7vtrfsel+FfEH/CTaOt/5H2bdNNF5e/f9yRkznA67c/jVWx8YLdTakjWNwfsepDTh9nUylsqh8xgB8qjfz1xjOa8p0FNMXSvB417YPCofUN39pZEHn+cfK87fxnbvxv7571a0xbFdFvRpg/4l3/CX23kdduzMONuf4fTtjGOK5Y46o4x2vbXXV+6ntbbXc7p5TRjOpva9lpovfcbXvq7Lb8T1pvEVm1lqNzbedfCwkaGaK1iZ5PMUAlFXHzHkdK0kbeitgjIzhhg14adP0LSvDPxLtYrXT7TW1nvCsSRxpcC2IQrgAbvL5GO1bWsDw9/wlmtf8Jr9m8j7JB/ZX277vl7P3nkZ/wCWm/rt+b7uK2jjpfaS+/RfFu7abfecs8qp3fJKVv8ADdvSGyvr8V99kes0V5D4f0M+INa8J2/ia1N7KugyvJb3y7gx82MKZFPDMFI+93561S/tC007w/a6HdxabHpLazfQJda4hls7RInYpGVLKCSCQoLAcd+lX9fduZxsvXrpvppuZ/2SnLkjUu+tlpb3tVrr8N7W16anqmveIP7DudHi8jzv7QvFtN2/b5eUdt3Q5+7jHHWmeKfET+H7ezFvai9vb25S0t4Xl8pC7AnLPtbaoCk8AnjpXlnhWQNY6LHG8bW0Pi2RLcQwtDEI/Idh5cbMxVDuJAyeDXZfE3RNO1bUfCIvrC1vQ2qrEftEKyZQxSEryOhIBx7CpjiqlWjOpHR6W8r262LlgaNDEU6VTVe9ffW17aXVvPVGrf8AjGbTbOB7jTZEuTfW9hKhZhHukKgvG5QeYo3dcDJBHFbllqtrqE95DbzCWSzl8mcAH5H2hse/DDp615XfRrFLq6IoRF8XWIVVGAAFg4FZ1xp1npa/EaDSLWytPFRuHktEhiRbv7M0cRcxgYcqfn+7396z+u1IS1V1r+HNtpu7GyyujVjZOz09NeTfXRLmPb6K8NtbHSo9F8Q3Wj+INEnU6FcLNpui2TW+75flkmBmfDryOQG+Y5roNa8G+H9P8HaU8l7pekMzxXE0ms7Xg1CQRn5Z9zKZPvEjngjOOMVvHGzlFtQWiv8AEvz2/I5p5ZSpyUXUert8DvtfVN3+656lRXLfDW+tr7wtG9ppttpkCTSRrHYnNvJhiPMiO0ZRuo4rqa9GnNVIKa6ni16ToVZUn0dv61f5hRRRWhgFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBiXEzx+KUC28ko+zLyhX+8/qRW/9rl/58p/++o//iqxm/5Ghf8Ar3X/ANCauioArfa5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAq/a5f+fKf/vqP/4qj7XL/wA+U/8A31H/APFVaooAKKKKACiiigAooooAK5/xJ/x8WP8A18R/+hCugrn/ABJ/x8WP/XxH/wChCgDSooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDKb/kaF/691/9CauirnW/5Ghf+vdf/QmroqAFooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5/xJ/x8WP/AF8R/wDoQroK5/xJ/wAfFj/18R/+hCgDSooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDKb/AJGhf+vdf/Qmroq51v8AkaF/691/9CauioAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArn/ABJ/x8WP/XxH/wChCugrn/En/HxY/wDXxH/6EKANKiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMpv+RoX/AK91/wDQmroq51v+RoX/AK91/wDQmroqAFooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5/xJ/wAfFj/18R/+hCugrn/En/HxY/8AXxH/AOhCgDSooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDKb/kaF/691/8AQmroq51v+RoX/r3X/wBCauioAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArn/En/HxY/wDXxH/6EK6Cuf8AEn/HxY/9fEf/AKEKANKiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMpv+RoX/r3X/0Jq6Kudb/kaF/691/9CauioAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArjfiDqJ01dJdfvy6naQAf786Kf0Jrsq4X4nW5mXQ2A3G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FFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBlN/yNC/8AXuv/AKE1dFXOt/yNC/8AXuv/AKE1dFQAtFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXP+JP+Pix/6+I//QhXQVz/AIk/4+LH/r4j/wDQhQBpUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBlN/yNC/9e6/+hNXRVzrf8jQv/Xuv/oTV0VAC0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFZul+IdP1q61K2srjzp9On+zXS7GXy5NobbkgZ4YcjI5oA0qK5268c6fFHqv2SK81a40u4jtrq1sLZnlR32kYBwGADBiQTgZ9K21vbdrx7RZ4jdIgkaAON6qSQGK9QCQRn2NAE9FZniLxNpnhPS5NR1e8jsrNCFMj5JLHoqgAliewAJrP8L/EHQvGVxcwaTdSzT26q8sU9pNbsqnIBxIikg4PSgDo65/xJ/x8WP8A18R/+hCugrn/ABJ/x8WP/XxH/wChCgDSooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDKb/kaF/691/9CauirnW/5Ghf+vdf/QmroqAFooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK8W8J6v4n0/xr8QU0Pw5aazbtrALy3GqfZSreRH8oXynzxjnNe01i6B4TtPDuoa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",
+									"description": "*required* A binary file, base64 data, or a URL for an image. (up to 10MB)",
+									"type": "text"
+								},
+								{
+									"key": "album",
+									"value": "{{albumHash}}",
+									"description": "[optional] The album",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "1x1 Pixel",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "This is an 1x1 pixel image.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "pixel.gif",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "gif",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image"
+							]
+						},
+						"description": "Upload a new image.\n\n#### Parameters\n\n| Key         | Required | Description                                                                                                                            |\n|-------------|----------|----------------------------------------------------------------------------------------------------------------------------------------|\n| image       | required | A binary file, base64 data, or a URL for an image. (up to 10MB)                                                                        |\n| album       | optional | The id of the album you want to add the image to. For anonymous albums, `album` should be the deletehash that is returned at creation. |\n| type        | optional | The type of the file that's being sent; `file`, `base64` or `URL`                                                                            |\n| name        | optional | The name of the file, this is automatically detected if uploading a file with a POST and multipart / form-data                         |\n| title       | optional | The title of the image.                                                                                                                |\n| description | optional | The description of the image.                                                                                                          |"
+					},
+					"response": [
+						{
+							"name": "Sample Anonymous Upload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Client-ID {{clientId}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"value": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+											"type": "text"
+										},
+										{
+											"key": "album",
+											"value": "{{albumHash}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "1x1 Pixel",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "This is an 1x1 pixel image.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "pixel.gif",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "gif",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.imgur.com/3/image",
+									"protocol": "https",
+									"host": [
+										"api",
+										"imgur",
+										"com"
+									],
+									"path": [
+										"3",
+										"image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, Accept, X-Mashape-Authorization, IMGURPLATFORM, IMGURUIDJAFO, SESSIONCOUNT, IMGURMWBETA, IMGURMWBETAOPTIN",
+									"name": "Access-Control-Allow-Headers",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, PUT, POST, DELETE, OPTIONS",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-RateLimit-ClientLimit, X-RateLimit-ClientRemaining, X-RateLimit-UserLimit, X-RateLimit-UserRemaining, X-RateLimit-UserReset",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 May 2017 16:28:10 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8e9f040e2b6ba2ebf5c836309b5cb50cf4b7368\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Limit",
+									"value": "1250",
+									"name": "X-Post-Rate-Limit-Limit",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Remaining",
+									"value": "1250",
+									"name": "X-Post-Rate-Limit-Remaining",
+									"description": ""
+								},
+								{
+									"key": "X-Post-Rate-Limit-Reset",
+									"value": "-2",
+									"name": "X-Post-Rate-Limit-Reset",
+									"description": ""
+								},
+								{
+									"key": "X-origin-ip",
+									"value": "172.16.2.228",
+									"name": "X-origin-ip",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "259f1853850b21cb4df8bc5bd15b7884",
+									"key": "IMGURSESSION"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "1",
+									"key": "_nc"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "api.imgur.com",
+									"path": "/",
+									"secure": false,
+									"value": "upload.i-054973f4f04ffec62.production",
+									"key": "UPSERVERID"
+								}
+							],
+							"body": "{\n  \"data\": {\n    \"id\": \"orunSTu\",\n    \"title\": null,\n    \"description\": null,\n    \"datetime\": 1495556889,\n    \"type\": \"image/gif\",\n    \"animated\": false,\n    \"width\": 1,\n    \"height\": 1,\n    \"size\": 42,\n    \"views\": 0,\n    \"bandwidth\": 0,\n    \"vote\": null,\n    \"favorite\": false,\n    \"nsfw\": null,\n    \"section\": null,\n    \"account_url\": null,\n    \"account_id\": 0,\n    \"is_ad\": false,\n    \"in_most_viral\": false,\n    \"tags\": [],\n    \"ad_type\": 0,\n    \"ad_url\": \"\",\n    \"in_gallery\": false,\n    \"deletehash\": \"x70po4w7BVvSUzZ\",\n    \"name\": \"\",\n    \"link\": \"http://i.imgur.com/orunSTu.gif\"\n  },\n  \"success\": true,\n  \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Favorite an Image (3upload)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = JSON.parse(responseBody);\r",
+									"\r",
+									"tests['Status code is 200'] = (responseCode.code === 200);\r",
+									"\r",
+									"tests['Set favorite was successful'] = res.success === true && res.status === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/image/{{imageHash3}}/favorite",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image",
+								"{{imageHash3}}",
+								"favorite"
+							]
+						},
+						"description": "Favorite an image with the given ID. The user is required to be logged in to favorite the image.\n\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Image Deletion (Authed) (upload3) ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This endpoint is critical to the test flow, ",
+									"// so this stops the request cycle if any of these tests error.",
+									"//postman.setNextRequest('end');",
+									"",
+									"var res = JSON.parse(responseBody);",
+									"",
+									"tests['Status code is 200'] = (responseCode.code === 200);",
+									"tests['Image deletion was successful'] = res.success === true && res.data === true;",
+									"",
+									"//postman.setNextRequest('end'); // stop running tests by setting next request to an invalid name / id"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ids",
+									"value": "{{imageHashBase64}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.imgur.com/3/image/{{imageHashBase64}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"image",
+								"{{imageHashBase64}}"
+							]
+						},
+						"description": "Deletes an image.\n\n#### Response Model: [Basic](https://api.imgur.com/models/basic)"
+					},
+					"response": []
+				},
+				{
+					"name": "Album Images (Check content of album)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"albumHash\", \"q1H7dp0\");\r",
+									"\r",
+									"//\"hVB4ybz\"\r",
+									"//\"q1H7dp0\",\r",
+									"//\"MiOyZfK\",\r",
+									"//\"Hpjo09G\","
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Client-ID {{clientId}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.imgur.com/3/album/{{albumHash}}/images",
+							"protocol": "https",
+							"host": [
+								"api",
+								"imgur",
+								"com"
+							],
+							"path": [
+								"3",
+								"album",
+								"{{albumHash}}",
+								"images"
+							]
+						},
+						"description": "Return all of the images in the album.\n\n#### Response Model: [Image](https://api.imgur.com/models/image)"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "oauth2",
+				"oauth2": [
+					{
+						"key": "scope",
+						"value": "",
+						"type": "string"
+					},
+					{
+						"key": "clientSecret",
+						"value": "a543220c4991282d7764eaed80d207a80b78f0d5",
+						"type": "string"
+					},
+					{
+						"key": "clientId",
+						"value": "3412b1895eff6a8",
+						"type": "string"
+					},
+					{
+						"key": "accessTokenUrl",
+						"value": "https://api.imgur.com/oauth2/token",
+						"type": "string"
+					},
+					{
+						"key": "authUrl",
+						"value": "https://api.imgur.com/oauth2/authorize",
+						"type": "string"
+					},
+					{
+						"key": "redirect_uri",
+						"value": "https://www.getpostman.com/oauth2/callback",
+						"type": "string"
+					},
+					{
+						"key": "grant_type",
+						"value": "authorization_code",
+						"type": "string"
+					},
+					{
+						"key": "tokenName",
+						"value": "imgur_token_mz",
+						"type": "string"
+					},
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "client_authentication",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "useBrowser",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "a543220c4991282d7764eaed80d207a80b78f0d5",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "3412b1895eff6a8",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api.imgur.com/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://api.imgur.com/oauth2/authorize",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://www.getpostman.com/oauth2/callback",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "imgur_token_mz",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
