@@ -1,15 +1,7 @@
-package ru.mz;
+package ru.mz.accounttest;
 
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import ru.mz.BaseTest;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
@@ -18,15 +10,10 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class AccountTest extends BaseTest {
-
-
-
-
     @Test
     void getAccountInfoTest(){
         given()
                 .headers("Authorization", token)
-//                .headers(headers)
                 .when()
                 .get("/account/{user}", username)
                 .then()
@@ -100,6 +87,4 @@ public class AccountTest extends BaseTest {
                 .getString("data.url");
 
     }
-
-
 }

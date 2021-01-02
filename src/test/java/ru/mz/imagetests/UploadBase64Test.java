@@ -1,4 +1,4 @@
-package ru.mz.uploadimg;
+package ru.mz.imagetests;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterEach;
@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class ImageTest extends BaseTest {
+public class UploadBase64Test extends BaseTest {
 
     String encodedImage;
     String uploadedImageDelHash;
