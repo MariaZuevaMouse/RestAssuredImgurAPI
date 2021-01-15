@@ -1,10 +1,15 @@
-package ru.mz.imagetests;
+package com.company.mz.imagetests;
 
+import com.company.mz.BaseTest;
+import com.company.mz.endpoints.Endpoints;
+import com.company.mz.util.UtilMethods;
+import io.restassured.RestAssured;
+import io.restassured.builder.MultiPartSpecBuilder;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import ru.mz.BaseTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +20,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
+//@Disabled
 public class UploadBase64Test extends BaseTest {
 
     String encodedImage;
@@ -24,35 +30,36 @@ public class UploadBase64Test extends BaseTest {
     void setUp(){
         byte[] fileContent = getFileContent();
         encodedImage = Base64.getEncoder().encodeToString(fileContent);
+        multiPartSpecification = new MultiPartSpecBuilder(encodedImage).controlName("image").build();
+        requestSpecification = UtilMethods.baseRequestSpecAuth.multiPart(multiPartSpecification);
+
+        RestAssured.requestSpecification = requestSpecification;
 
     }
-
 
     @Test
     void uploadFileTest() {
         uploadedImageDelHash = given()
-                .headers("Authorization", token)
-                .multiPart("image", encodedImage)
                 .expect()
                 .body("success", is(true))
                 .body("data.id", is(notNullValue()))
                 .when()
-                .post("/image")
+                .post(Endpoints.IMAGE_POST)
                 .prettyPeek()
                 .then()
                 .statusCode(200)
                 .extract()
                 .response()
                 .jsonPath()
-                .getString("data.deletehash");
+                .getString("data.id");
     }
 
     @AfterEach
     void tearDown() {
         given()
-                .headers("Authorization", token)
+                .multiPart("ids", uploadedImageDelHash)
                 .when()
-                .delete("account/{username}/image/{deleteHash}", username, uploadedImageDelHash )
+                .delete(Endpoints.IMAGE_AUTH_DELETE, uploadedImageDelHash )
                 .prettyPeek()
                 .then()
                 .statusCode(200);

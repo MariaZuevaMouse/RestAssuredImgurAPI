@@ -1,4 +1,4 @@
-package ru.mz.albumtest.not;
+package com.company.mz.albumtest.not;
 
 public class RemoveImagesFromAlbumTest {
 }
